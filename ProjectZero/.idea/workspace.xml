@@ -4,33 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9fdbcb20-2c62-4ab6-a114-b1c48df836c1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_3_5_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_postgresql_postgresql_42_2_18.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProjectZero.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dev/models/Monster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dev/models/Spells.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dev/utilis/ConnectionUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/connection.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../YGO_Database.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
+    <list default="true" id="c639ca18-7c3f-42d4-b3a6-a0a607ed3e21" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dev/models/Cards.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dev/models/CreateDeck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dev/models/Deck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dev/repositories/CardsRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dev/repositories/CreateDeckRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dev/repositories/MasterDeckRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dev/repositories/UserDeckRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dev/services/MasterDeck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dev/services/UserDeck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dev/utilis/YourFoolException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/app/DuelistApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/app/DuelistApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/models/Monster.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/models/Spells.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/repositories/MonsterRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/repositories/SpellTrapRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/repositories/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/repositories/UserRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/services/UserServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/services/UserServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../YGO_Database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../YGO_Database.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1xq1MQs8Pkesy54mKOP19DwO2S5" />
+  <component name="ProjectId" id="1y5h99LV7Td1Y6th4SjfFFm8XM6" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -40,20 +51,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
-  <component name="RunManager" selected="Application.DuelistApp">
-    <configuration name="ConnectionUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dev.utilis.ConnectionUtil" />
-      <module name="ProjectZero" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.dev.utilis.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="DuelistApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.dev.app.DuelistApp" />
       <module name="ProjectZero" />
@@ -70,19 +68,30 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.DuelistApp" />
-        <item itemvalue="Application.ConnectionUtil" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9fdbcb20-2c62-4ab6-a114-b1c48df836c1" name="Changes" comment="" />
-      <created>1631067757137</created>
+      <changelist id="c639ca18-7c3f-42d4-b3a6-a0a607ed3e21" name="Changes" comment="" />
+      <created>1631547204135</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1631067757137</updated>
+      <updated>1631547204135</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

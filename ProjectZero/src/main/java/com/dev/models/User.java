@@ -1,23 +1,29 @@
 package com.dev.models;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
+
 public class User {
 
     private Integer id;
     private String username;
     private String password;
+    private Boolean admin;
 
     public User() {
     }
 
-    public User(String username, String password) {
+    public User(String username, String password, Boolean admin) {
         this.username = username;
         this.password = password;
+        this.admin = admin;
     }
 
-    public User(Integer id, String username, String password) {
+    public User(Integer id, String username, String password, Boolean admin) {
         this.id = id;
         this.username = username;
         this.password = password;
+        this.admin = admin;
+
     }
 
     public Integer getId() {
@@ -44,12 +50,20 @@ public class User {
         this.password = password;
     }
 
+    public Boolean getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Boolean admin) {
+        this.admin = admin;
+    }
+
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
+        return  "ID: " + id +
+                "Username: " + username + '\'' +
+                "Password: '" + password + '\'' +
+                "Admin: " + admin +
                 '}';
     }
 }

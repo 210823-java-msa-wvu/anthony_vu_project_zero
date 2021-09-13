@@ -1,41 +1,67 @@
-drop table monster_card;
-drop table mt_card;
+drop table ygo_card;
 drop table users;
-select * from monster_card;
-select * from mt_card;
+drop table user_deck;
+select * from ygo_card;
 select * from users;
-select * from users where username = 'SetoKaiba';
+select * from user_deck;
+
+delete from ygo_card where id = 1;
+insert into ygo_card values (default, '4-Starred Ladybug of Domm', 'Insect', 'Effect');
+
+insert into user_deck select * from ygo_card where id = 1;
 
 -- Create table for Monster Cards
-create table monster_card(
+create table ygo_card(
 	id serial primary key,
-	mon_name VARCHAR not null,
-	mon_race VARCHAR not null,
-	mon_type VARCHAR not null
-);
-
--- Create table for Magic/Trap Cards
-create table mt_card(
-	id serial primary key,
-	mt_name VARCHAR not null,
-	mt_type VARCHAR not null,
-	mt_race VARCHAR not null 
+	card_name VARCHAR not null,
+	card_race VARCHAR not null,
+	card_type VARCHAR not null
 );
 
 -- Create table for Users
 create table users(
 	id serial primary key,
 	username VARCHAR unique not null,
-	password VARCHAR not null
+	password VARCHAR not null,
+	admin BOOLEAN not null
+);
+
+drop table SetoKaiba;
+
+create table SetoKaiba(
+	id serial,
+	deck_name VARCHAR unique not null
+);
+
+create table ThePharaoh(
+	id serial,
+	deck_name VARCHAR unique not null
+);
+
+create table KaibaCorp(
+	id serial,
+	deck_name VARCHAR unique not null
+);
+
+create table Yuki(
+	id serial,
+	deck_name VARCHAR unique not null
+);
+
+create table user_deck(
+	id serial,
+	card_name VARCHAR not null,
+	card_race VARCHAR not null,
+	card_type VARCHAR not null
 );
 
 insert into users values
-(default, 'SetoKaiba', 'NumberOne'),
-(default, 'ThePharaoh', 'thekingofgames'),
-(default, 'KaibaCorp', 'Mokuba'),
-(default, 'Yuki', 'gf');
+(default, 'SetoKaiba', 'NumberOne', true),
+(default, 'ThePharaoh', 'thekingofgames', false),
+(default, 'KaibaCorp', 'Mokuba', true),
+(default, 'Yuki', 'gf', false);
 
-insert into monster_card values 
+insert into ygo_card values 
 (default, '4-Starred Ladybug of Doom', 'Insect', 'Effect'), 
 (default, 'Adamancipator Crystal', 'Rock', 'Effect'),
 (default, 'Aeropixtree', 'Fairy', 'Effect'),
@@ -151,9 +177,7 @@ insert into monster_card values
 (default, 'Cyberdark Edge', 'Machine', 'Normal'),
 (default, 'Cyberdark Horn', 'Machine', 'Effect'),
 (default, 'Cyberdark Keel', 'Machine', 'Normal'),
-(default, 'Cyberse Gadget', 'Cyberse', 'Effect');
-
-insert into mt_card values
+(default, 'Cyberse Gadget', 'Cyberse', 'Effect'),
 (default, '"A" Cell Recombination Device', 'Magic Card', 'Quick Play'),
 (default, 'A.I. Contact', 'Magic Card', 'Normal Spell'),
 (default, 'A.I. Challenge You', 'Trap Card', 'Continuous Trap'),
