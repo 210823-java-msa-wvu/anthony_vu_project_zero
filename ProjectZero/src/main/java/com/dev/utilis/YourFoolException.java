@@ -10,6 +10,4 @@ public class YourFoolException extends SQLException {
 
 }
 
-class TypeANumberIdiot extends InputMismatchException {
 
-}

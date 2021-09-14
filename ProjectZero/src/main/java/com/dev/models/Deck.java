@@ -57,9 +57,9 @@ public class Deck {
 
     @Override
     public String toString() {
-        return  "ID: " + id + "|" +
-                "Card Name: " + cardName + "|" +
-                "%10s Card Race: " + cardRace + "|" +
-                "%10s Card Type: " + cardType;
+        return  "ID: " + id + " | " +
+                "Card Name: " + cardName + " | " +
+                "Card Race: " + cardRace + " | " +
+                "Card Type: " + cardType;
     }
 }

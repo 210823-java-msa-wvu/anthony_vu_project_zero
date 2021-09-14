@@ -21,11 +21,12 @@ public class MasterDeck {
     public void deckMaster(String username){
 
         Scanner scanner = new Scanner(System.in);
+        Scanner option = new Scanner(System.in);
         boolean running = true;
 
         while (running){
 
-            System.out.println("\nWhat would you like to do " + username + "?\n");
+            System.out.println("\nWhat would you like to do " + username + "?");
             System.out.println("(1) View Card Database.");
             System.out.println("(2) Add a New Card to the Database.");
             System.out.println("(3) Remove a Card from the Database.");
@@ -56,27 +57,27 @@ public class MasterDeck {
 
                     System.out.println("\nInput data of the card.\n");
                     System.out.println("Card name: ");
-                    Scanner cardName = new Scanner(System.in);
-                    String name = cardName.nextLine();
+                    String name = option.nextLine();
                     System.out.println("Card Race: ");
-                    Scanner cardRace = new Scanner(System.in);
-                    String race = cardRace.nextLine();
+                    String race = option.nextLine();
                     System.out.println("Card Type: ");
-                    Scanner cardType = new Scanner(System.in);
-                    String type = cardType.nextLine();
+                    String type = option.nextLine();
 
                     Cards newCard = new Cards(name, race, type);
                     card.add(newCard);
-                    System.out.println("\nYou have added a card, Master Kaiba.\n");
+                    System.out.println("\nYou have added a card, Master Kaiba.");
                     break;
 
                 case "3":
 
                     // Remove card from Database
+                    List<Cards> ListCard = card.getAll();
+                    for (Cards card : ListCard){
+                        System.out.println(card);
+                    }
 
                     System.out.println("Select an ID of a card you want to remove from the DB:");
-                    Scanner removeC = new Scanner(System.in);
-                    int removeCard = removeC.nextInt();
+                    int removeCard = option.nextInt();
                     System.out.println("You have removed " + card.getById(removeCard));
                     card.delete(removeCard);
                     break;
@@ -96,8 +97,7 @@ public class MasterDeck {
                     // Create a new deck
 
                     System.out.println("Create a Deck Name: ");
-                    Scanner deckName = new Scanner(System.in);
-                    String deck_name = deckName.nextLine();
+                    String deck_name = option.nextLine();
                     create_deck.addDeck(username, deck_name);
                     create_deck.createDeck(deck_name);
 
@@ -115,18 +115,16 @@ public class MasterDeck {
                         System.out.println(create_deck);
                     }
 
-                    Scanner nameD = new Scanner(System.in);
-                    String deckList = nameD.nextLine();
+                    String deckList = option.nextLine();
 
                     List<Deck> ListDeck = deck.getDeckList(deckList);
 
                     System.out.println("\nHere is your Deck List.\n");
-
                     for (Deck deck : ListDeck){
                         System.out.println(deck);
                     }
-
                     break;
+
                 case "7":
 
                     // Add card to a selected Deck
@@ -138,8 +136,7 @@ public class MasterDeck {
 
                     System.out.println("\nPick a deck by name that you want to add cards to: ");
 
-                    Scanner nameOfDeck = new Scanner(System.in);
-                    String name_deck = nameOfDeck.nextLine();
+                    String nameOfDeck = option.nextLine();
 
                     List<Cards> allC = card.getAll();
                     for (Cards card : allC) {
@@ -148,11 +145,10 @@ public class MasterDeck {
 
                     System.out.println("\nBy ID, select the card you want to add: ");
 
-                    Scanner pickId = new Scanner(System.in);
-                    Integer cardId = pickId.nextInt();
+                    Integer cardId = option.nextInt();
 
-                    create_deck.addCardToDeck(name_deck, cardId);
-                    System.out.println("You have added " + card.getById(cardId) + " to your " + name_deck + " deck.");
+                    create_deck.addCardToDeck(nameOfDeck, cardId);
+                    System.out.println("You have added " + card.getById(cardId) + " to your " + nameOfDeck + " deck.");
                     break;
 
                 case "8":
@@ -160,8 +156,7 @@ public class MasterDeck {
                     // Remove cards from a selected Deck
 
                     System.out.println("\nSelect the deck you want to remove a card from:");
-                    Scanner uD = new Scanner(System.in);
-                    String userD = uD.nextLine();
+                    String userD = option.nextLine();
 
                     List<Deck> ListD = deck.getDeckList(userD);
 
@@ -170,10 +165,9 @@ public class MasterDeck {
                             System.out.println(deck);
                         }
                         System.out.println("\nSelect the ID of the card you want to remove:");
-                        Scanner dCard = new Scanner(System.in);
-                        int deleteId = Integer.parseInt(dCard.nextLine());
+                        int deleteId = Integer.parseInt(option.nextLine());
                         create_deck.removeCardFromDeck(userD, deleteId);
-                        System.out.println("You have removed " + card.getById(deleteId) + " to your " + uD + " deck.");
+                        System.out.println("You have removed " + card.getById(deleteId) + " to your " + deleteId + " deck.");
                     } catch (NumberFormatException e){
                         System.out.println("That's not a number you 3rd Rate Duelist!");
                     }
@@ -190,12 +184,10 @@ public class MasterDeck {
                         System.out.println(create_deck);
                     }
 
-                    Scanner sDeck = new Scanner((System.in));
-                    String selectDeck = sDeck.nextLine();
+                    String selectDeck = option.nextLine();
 
                     System.out.println("Are you sure you want to remove all of your cards? (Y/N)\n");
-                    Scanner yesNo = new Scanner(System.in);
-                    String choice = yesNo.nextLine().toLowerCase();
+                    String choice = option.nextLine().toLowerCase();
                     if (choice.equals("y")){
                         create_deck.removeAllCards(selectDeck);
                     }
@@ -211,16 +203,14 @@ public class MasterDeck {
                     for (User user : allUsers){
                         System.out.println(user);
                     }
-                    Scanner userS = new Scanner(System.in);
-                    String scanUser = userS.nextLine();
+                    String scanUser = option.nextLine();
 
                     List<CreateDeck> userRepo = create_deck.getAll(scanUser);
                     for (CreateDeck create_deck : userRepo){
                         System.out.println(create_deck);
                     }
 
-                    Scanner select_Deck = new Scanner(System.in);
-                    String deckSelect = select_Deck.nextLine();
+                    String deckSelect = option.nextLine();
 
                     master.dropDeck(deckSelect);
                     master.deleteDeck(scanUser, deckSelect);

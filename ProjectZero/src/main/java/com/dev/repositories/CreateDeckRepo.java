@@ -70,7 +70,7 @@ public class CreateDeckRepo implements CrudRepository<CreateDeck>{
 
         try (Connection conn = cu.getConnection()){
 
-            String sql = "create table " + deckname + "(id serial, card_name VARCHAR not null, card_race VARCHAR not null, card_type VARCHAR not null);";
+            String sql = "create table " + deckname + " (id serial, card_name VARCHAR not null, card_race VARCHAR not null, card_type VARCHAR not null);";
             PreparedStatement ps = conn.prepareStatement(sql);
 
             ps.execute();
