@@ -1,7 +1,6 @@
 package com.dev.repositories;
 
 import com.dev.models.CreateDeck;
-import com.dev.models.Deck;
 import com.dev.utilis.ConnectionUtil;
 
 import java.sql.Connection;
@@ -10,15 +9,28 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class CreateDeckRepo implements CrudRepository<CreateDeck>{
 
-    private ConnectionUtil cu = ConnectionUtil.getConnectionUtil();
+    private final ConnectionUtil cu = ConnectionUtil.getConnectionUtil();
 
     @Override
     public CreateDeck add(CreateDeck createDeck) {
         return null;
+    }
+
+    public void deckSlot(String username){
+        try (Connection conn = cu.getConnection()){
+
+            String sql = "create table " + username + "(id serial, deck_name VARCHAR unique not null);";
+
+            PreparedStatement ps = conn.prepareStatement(sql);
+
+            ps.execute();
+
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
     }
 
     public void addCardToDeck(String name_deck, Integer id){

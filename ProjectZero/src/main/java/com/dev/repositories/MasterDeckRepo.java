@@ -114,6 +114,22 @@ public class MasterDeckRepo implements CrudRepository<Deck> {
 
     }
 
+    public void dropDeck(String deckName){
+
+        try (Connection conn = cu.getConnection()){
+
+            String sql = "drop table " + deckName;
+
+            PreparedStatement ps = conn.prepareStatement(sql);
+
+            ps.execute();
+
+
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
     public void removeAll(){
         try (Connection conn = cu.getConnection()){
 
@@ -144,4 +160,21 @@ public class MasterDeckRepo implements CrudRepository<Deck> {
         }
 
     }
+
+    public void deleteDeck(String username, String deckName) {
+
+        try (Connection conn = cu.getConnection()){
+
+            String sql = "delete from " + username + " where deck_name = ?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, deckName);
+
+            ps.execute();
+
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+
+    }
+
 }

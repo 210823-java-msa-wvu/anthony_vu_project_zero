@@ -1,12 +1,11 @@
 package com.dev.app;
 
 import com.dev.models.User;
-import com.dev.repositories.UserRepo;
+import com.dev.repositories.CreateDeckRepo;
 import com.dev.services.MasterDeck;
 import com.dev.services.UserDeck;
 import com.dev.services.UserServices;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class DuelistApp {
@@ -15,6 +14,7 @@ public class DuelistApp {
     public static UserDeck userDeck = new UserDeck();
     public static UserServices userServices = new UserServices();
     public static MasterDeck deckMaster = new MasterDeck();
+    static CreateDeckRepo create_deck = new CreateDeckRepo();
 
     public static void main(String[] args) {
 
@@ -50,7 +50,7 @@ public class DuelistApp {
                         }
                         running = false;
                     } else {
-                        System.out.println("\nYour credentials do not match.\n");
+                        System.out.println("Your credentials do not match.\n");
                     }
                     break;
                 }
@@ -64,7 +64,7 @@ public class DuelistApp {
                     System.out.println("\nEnter in your Password: ");
                     String password = scanner.nextLine();
 
-                    System.out.println("]nAre you an Admin: (True/False)");
+                    System.out.println("\nAre you an Admin: (True/False)");
                     boolean admin = scanner.nextBoolean();
 
                     boolean result = userServices.newDuelist(username);
@@ -77,6 +77,9 @@ public class DuelistApp {
 
                         userServices.createUser(u);
                     }
+
+                    create_deck.deckSlot(username);
+
                 }
                 break;
 

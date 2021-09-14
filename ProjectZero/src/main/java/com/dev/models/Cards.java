@@ -60,7 +60,7 @@ public class Cards {
     public String toString() {
         return  "ID: " + id +
                 " | Card Name: " + cardName +
-                " %10s| Card Race: " + cardRace +
-                " %10s| Card Type: " + cardType;
+                " | Card Race: " + cardRace +
+                " | Card Type: " + cardType;
     }
 }

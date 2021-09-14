@@ -22,7 +22,7 @@ public class UserServices {
                 }
             }
         } catch (YourFoolException e) {
-            System.out.println("Your are a Fourth Rate Duelist! GET OUT!");
+            System.out.println(e.getMessage());
         }
 
         return null;

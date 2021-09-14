@@ -1,5 +1,6 @@
 package com.dev.repositories;
 
+import com.dev.models.Deck;
 import com.dev.models.User;
 import com.dev.utilis.ConnectionUtil;
 import com.dev.utilis.YourFoolException;
@@ -8,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserRepo implements CrudRepository<User>{
@@ -99,6 +101,33 @@ public class UserRepo implements CrudRepository<User>{
 
     @Override
     public List<User> getAll() {
+
+        List<User> user = new ArrayList<>();
+
+        try (Connection conn = cu.getConnection()){
+
+            String sql = "select * from users";
+
+            PreparedStatement ps = conn.prepareStatement(sql);
+
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()){
+                User u = new User(
+                        rs.getInt("id"),
+                        rs.getString("username"),
+                        rs.getString("password"),
+                        rs.getBoolean("admin")
+                );
+                user.add(u);
+            }
+
+            return user;
+
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+
         return null;
     }
 

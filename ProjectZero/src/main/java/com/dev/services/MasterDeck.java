@@ -3,10 +3,8 @@ package com.dev.services;
 import com.dev.models.Cards;
 import com.dev.models.CreateDeck;
 import com.dev.models.Deck;
-import com.dev.repositories.CardsRepo;
-import com.dev.repositories.CreateDeckRepo;
-import com.dev.repositories.MasterDeckRepo;
-import com.dev.repositories.UserDeckRepo;
+import com.dev.models.User;
+import com.dev.repositories.*;
 
 import java.util.List;
 import java.util.Scanner;
@@ -16,6 +14,8 @@ public class MasterDeck {
     static CardsRepo card = new CardsRepo();
     static UserDeckRepo deck = new UserDeckRepo();
     static CreateDeckRepo create_deck = new CreateDeckRepo();
+    static UserRepo user = new UserRepo();
+    static MasterDeckRepo master = new MasterDeckRepo();
 
 
     public void deckMaster(String username){
@@ -35,6 +35,7 @@ public class MasterDeck {
             System.out.println("(7) Add Card to Deck.");
             System.out.println("(8) Remove Card From Deck.");
             System.out.println("(9) Empty Deck.");
+            System.out.println("(10) Drop Deck.");
             System.out.println("(0) Exit Duel Room");
 
             String result = scanner.nextLine();
@@ -83,9 +84,7 @@ public class MasterDeck {
                 case "4":
 
                     // View User Decks
-
-                    System.out.println(username);
-                    // Statement to print out all of the user's decks
+                    // Statement to print out all the user's decks
                     List<CreateDeck> ud = create_deck.getAll(username);
                     for (CreateDeck create_deck : ud){
                         System.out.println(create_deck);
@@ -203,10 +202,38 @@ public class MasterDeck {
                     System.out.println("This deck...is clear. (Ace Ventura Impression");
                     break;
 
+                case "10":
+
+                    // Drop a user's deck
+                    System.out.println("Select a user whose decks you want to view by username:\n");
+                    List<User> allUsers = user.getAll();
+
+                    for (User user : allUsers){
+                        System.out.println(user);
+                    }
+                    Scanner userS = new Scanner(System.in);
+                    String scanUser = userS.nextLine();
+
+                    List<CreateDeck> userRepo = create_deck.getAll(scanUser);
+                    for (CreateDeck create_deck : userRepo){
+                        System.out.println(create_deck);
+                    }
+
+                    Scanner select_Deck = new Scanner(System.in);
+                    String deckSelect = select_Deck.nextLine();
+
+                    master.dropDeck(deckSelect);
+                    master.deleteDeck(scanUser, deckSelect);
+
+                    System.out.println("You have drop " + deckSelect + " from user " + scanUser);
+
+                    break;
+
                 case "0":
                     System.out.println("\nNext Time!");
                     running = false;
                     break;
+
                 default:
                     System.out.println("INVALID!");
             }

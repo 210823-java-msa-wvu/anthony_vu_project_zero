@@ -12,7 +12,7 @@ import java.util.List;
 
 public class UserDeckRepo implements CrudRepository<Deck>{
 
-    private ConnectionUtil cu = ConnectionUtil.getConnectionUtil();
+    private final ConnectionUtil cu = ConnectionUtil.getConnectionUtil();
 
     @Override
     public Deck add(Deck deck) {

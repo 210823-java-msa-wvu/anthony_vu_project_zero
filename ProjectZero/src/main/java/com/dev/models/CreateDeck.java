@@ -6,24 +6,24 @@ public class CreateDeck {
     private String deckUser;
     private String deckName;
 
-    public CreateDeck(){
-
-    }
-
-    public CreateDeck(String deckUser, String deckName){
-        this.deckUser = deckUser;
-        this.deckName = deckName;
-    }
-
-    public CreateDeck(Integer id, String deckUser, String deckName){
-        this.id = id;
-        this.deckUser = deckUser;
-        this.deckName = deckName;
-    }
-
-    public CreateDeck(String deckUser) {
-        this.deckUser = deckUser;
-    }
+//    public CreateDeck(){
+//
+//    }
+//
+//    public CreateDeck(String deckUser, String deckName){
+//        this.deckUser = deckUser;
+//        this.deckName = deckName;
+//    }
+//
+//    public CreateDeck(Integer id, String deckUser, String deckName){
+//        this.id = id;
+//        this.deckUser = deckUser;
+//        this.deckName = deckName;
+//    }
+//
+//    public CreateDeck(String deckUser) {
+//        this.deckUser = deckUser;
+//    }
 
     public CreateDeck(Integer id, String deckName) {
         this.id = id;
@@ -56,10 +56,8 @@ public class CreateDeck {
 
     @Override
     public String toString() {
-        return "CreateDeck{" +
-                "id=" + id +
-                ", deckUser='" + deckUser + '\'' +
-                ", deckName='" + deckName + '\'' +
-                '}';
+        return "User Decks => " +
+                "Deck ID: " + id +
+                " | Deck Name: " + deckName;
     }
 }
