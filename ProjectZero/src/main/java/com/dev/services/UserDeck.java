@@ -145,7 +145,7 @@ public class UserDeck {
                         Scanner dCard = new Scanner(System.in);
                         int deleteId = Integer.parseInt(dCard.nextLine());
                         create_deck.removeCardFromDeck(userD, deleteId);
-                        System.out.println("You have removed " + card.getById(deleteId) + " to your " + uD + " deck.");
+                        System.out.println("You have removed " + card.getById(deleteId) + " from your " + userD + " deck.");
                     } catch (NumberFormatException e){
                         System.out.println("That's not a number you 3rd Rate Duelist!");
                     }
