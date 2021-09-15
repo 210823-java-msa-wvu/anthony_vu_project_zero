@@ -42,11 +42,11 @@ public class DuelistApp {
 
                         if (logInResults != null) {
                             if (logInResults.getAdmin()) {
-                                System.out.println("Welcome Master Kaiba!");
+                                System.out.println("\nWelcome Master Kaiba!");
                                 deckMaster.deckMaster(username);
 
                             } else {
-                                System.out.println("\nYou have successfully entered the Dueling Ring!\n");
+                                System.out.println("\nYou have successfully entered the Dueling Ring!");
                                 userDeck.deck(username);
                             }
                             running = false;

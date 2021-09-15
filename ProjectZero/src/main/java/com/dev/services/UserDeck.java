@@ -126,6 +126,10 @@ public class UserDeck {
                 case "6":
 
                     // Remove cards from a selected Deck
+                    List<CreateDeck> allDecks2 = create_deck.getAll(username);
+                    for (CreateDeck create_deck : allDecks2) {
+                        System.out.println(create_deck);
+                    }
 
                     System.out.println("\nSelect the deck you want to remove a card from:");
                     Scanner uD = new Scanner(System.in);

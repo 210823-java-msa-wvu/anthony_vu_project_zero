@@ -154,6 +154,10 @@ public class MasterDeck {
                 case "8":
 
                     // Remove cards from a selected Deck
+                    List<CreateDeck> allDecks2 = create_deck.getAll(username);
+                    for (CreateDeck create_deck : allDecks2) {
+                        System.out.println(create_deck);
+                    }
 
                     System.out.println("\nSelect the deck you want to remove a card from:");
                     String userD = option.nextLine();
@@ -197,7 +201,7 @@ public class MasterDeck {
                 case "10":
 
                     // Drop a user's deck
-                    System.out.println("Select a user whose decks you want to view by username:\n");
+                    System.out.println("\nSelect a user whose decks you want to view by username:");
                     List<User> allUsers = user.getAll();
 
                     for (User user : allUsers){

@@ -7,11 +7,8 @@
     <list default="true" id="c639ca18-7c3f-42d4-b3a6-a0a607ed3e21" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/app/DuelistApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/app/DuelistApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/models/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/models/Deck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/repositories/CreateDeckRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/repositories/CreateDeckRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/services/MasterDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/services/MasterDeck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/utilis/YourFoolException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/utilis/YourFoolException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../YGO_Database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../YGO_Database.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dev/services/UserDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dev/services/UserDeck.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
